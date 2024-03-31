@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Yuthika's life</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Styling preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .preloader img {
+            max-width: 90%; /* Set maximum width for responsiveness */
+            max-height: 90%; /* Set maximum height for responsiveness */
+        }
+
+        /* Your existing styles */
+        h1,
+        h2,
+        .on-off-label {
+            color: white; /* Set text color to white */
+        }
+
+        #toggleMessage {
+            color: white; /* Set text color to white */
+            font-family: Jokerman, cursive; /* Set font to Jokerman */
+            font-size: 28px; /* Increase font size */
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <!-- Your existing content -->
+    <h1>Welcome to Yuthika's life</h1>
+    <h2>Why should she go to UCSD? Enter her life to find out</h2>
+
+    <!-- Button to trigger preloader -->
+    <button id="loginButton" class="bigButton">Enter</button>
+    
+    <!-- Preloader with GIF -->
+    <div class="preloader" id="preloader">
+        <img src="Copy of Me.gif" alt="Loading..." style="width: 600px; height: 400px;">
+    </div>
+
+    <!-- Your existing content -->
+    <div class="toggleContainer">
+        <label for="toggleButton" class="rememberLabel">Remember me?</label>
+        <label class="switch">
+            <input type="checkbox" id="toggleButton">
+            <span class="slider round"></span>
+        </label>
+        <span class="on-off-label">Off</span>
+    </div>
+    <p id="toggleMessage">please</p>
+
+    <!-- Your existing script -->
+    <script src="script.js"></script>
+    <script>
+        // Get the preloader element
+        var preloader = document.getElementById("preloader");
+
+        // Add event listener to the enter button
+        document.getElementById("loginButton").addEventListener("click", function() {
+            // Show the preloader
+            preloader.style.display = "flex";
+
+            // Navigate to next page after a delay
+            setTimeout(function() {
+                window.location.href = "Page1.html"; // Replace with the URL of your next page
+            }, 5000); // Adjust the delay (in milliseconds) as needed
+        });
+
+        // Toggle the display of "please" message based on the toggle button state
+        document.getElementById("toggleButton").addEventListener("change", function() {
+            var toggleMessage = document.getElementById("toggleMessage");
+            toggleMessage.style.display = this.checked ? "block" : "none";
+
+            // Toggle between "On" and "Off" labels
+            var onOffLabel = document.querySelector(".on-off-label");
+            onOffLabel.textContent = this.checked ? "On" : "Off";
+        });
+    </script>
+</body>
+</html>

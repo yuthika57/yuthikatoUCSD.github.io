@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuthika at UCSD</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-content: center;
+      background: #182b49; /* Set background color */
+      color: white; /* Set text color */
+      overflow: auto; /* Allow scrolling */
+    }
+
+    h1 {
+      font-family: sans-serif; /* Change font to sans-serif */
+      text-align: center;
+    }
+
+    .gallery {
+      --d: 10s;
+      display: grid;
+      width: 300px; /* Adjust the width of the gallery */
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Adjust the column layout */
+      gap: 20px; /* Adjust the gap between images */
+      margin-top: 50px; /* Adjust the margin-top to move the carousel down */
+    }
+
+    .gallery > img {
+      grid-area: 1/1;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 10px solid #f2f2f2;
+      box-shadow: 0 0 4px #0007;
+      z-index: 2;
+      animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
+    }
+
+    .gallery img:last-child {
+      animation-name: slide, z-order-last;
+    }
+
+    .gallery > img:nth-child(1) {
+      animation-delay: calc(0*var(--d));
+      --r: -18deg; /* Increased orientation */
+    }
+
+    .gallery > img:nth-child(2) {
+      animation-delay: calc(-0.2*var(--d));
+      --r: -16deg; /* Increased orientation */
+    }
+
+    .gallery > img:nth-child(3) {
+      animation-delay: calc(-0.4*var(--d));
+      --r: 38deg; /* Increased orientation */
+    }
+
+    .gallery > img:nth-child(4) {
+      animation-delay: calc(-0.6*var(--d));
+      --r: -32deg; /* Increased orientation */
+    }
+
+    .gallery > img:nth-child(5) {
+      animation-delay: calc(-0.8*var(--d));
+      --r: -20deg; /* Increased orientation */
+    }
+
+    @keyframes slide {
+      10% {
+        transform: translateX(120%) rotate(var(--r));
+      }
+      0%, 100%, 20% {
+        transform: translateX(0%) rotate(var(--r));
+      }
+    }
+    @keyframes z-order {
+      10%, 20% {
+        z-index: 1;
+      }
+      80% {
+        z-index: 2;
+      }
+    }
+    @keyframes z-order-last {
+      10%, 20% {
+        z-index: 1;
+      }
+      90% {
+        z-index: 2;
+      }
+    }
+
+    .changing-text {
+      text-align: center;
+      font-size: 24px; /* Adjust the font size as desired */
+      margin-top: 80px; /* Adjust the margin-top to position the text slightly up */
+      font-family: sans-serif; /* Change font to sans-serif */
+    }
+
+    /* Style for the placeholder sentence */
+    .placeholder-sentence {
+      font-size: 18px; /* Increase font size */
+      font-family: sans-serif; /* Change font to sans-serif */
+      text-align: center;
+      margin-top: 20px; /* Adjust margin */
+    }
+
+    /* Style for the button */
+    .yellow-button {
+      background-color: #c69214; /* Yellow color */
+      color: white; /* Text color */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: sans-serif; /* Change font to sans-serif */
+      display: block;
+      margin: 0 auto; /* Center the button */
+      margin-top: 10px; /* Adjust margin */
+    }
+  </style>
+</head>
+<body>
+  <h1>Imagine me at UCSD?</h1>
+  <div class="gallery">
+    <img src="random 6.jpg" alt="a lovely kiss in the night">
+    <img src="random 7.jpg" alt="a woman inside a car">
+    <img src="random 8.jpg" alt="a baby">
+    <img src="random 9.jpg" alt="a woman inside a car">
+    <img src="random 10.jpg" alt="a baby">
+  </div>
+  <br><br>
+  <div class="changing-text"></div>
+
+  <!-- Placeholder sentence -->
+  <p class="placeholder-sentence">More reasons why Yuthika at UCSD? (scroll)</p>
+
+  <!-- Button linking to page4.html -->
+  <a href="page4.html" class="yellow-button">Click here</a>
+
+  <script>
+    function rotateText() {
+      const textList = ['Yuthika at UCSD!!!', 'Yuthika at UCSD!!!', 'Yuthika at UCSD!!!', 'Yuthika at UCSD!!!', 'Yuthika at UCSD!!!'];
+      const rotationDuration = 2000;
+  
+      let currentIndex = 0;
+  
+      function updateText() {
+        const changingDiv = document.querySelector('.changing-text');
+        if (!changingDiv) {
+          console.error('No element found with class "changing-text"');
+          return;
+        }
+        changingDiv.textContent = textList[currentIndex];
+        currentIndex = (currentIndex + 1) % textList.length;
+        setTimeout(updateText, rotationDuration);
+      }
+  
+      updateText();
+    }
+  
+    rotateText();
+  </script>
+</body>
+</html>

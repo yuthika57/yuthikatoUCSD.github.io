@@ -1,0 +1,122 @@
+<script src="scripts2.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reaction page</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            background-color: #182b49;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .swiper-container {
+            width: 50%;
+            height: 50vh; /* Adjust height as needed */
+            border: 1px solid white;
+            margin: 0 auto; /* Center the slider horizontally */
+            position: relative; /* Position relative for pagination */
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            bottom: 10px; /* Adjust the distance from the bottom */
+            left: 0; /* Position dots on the left */
+            right: 0; /* Position dots on the right */
+            margin: 0 auto; /* Center horizontally */
+            z-index: 10; /* Ensure dots are above the slides */
+        }
+
+        .swiper-pagination-bullet {
+            background-color: #c69214 !important;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .bigButton {
+            background-color: #c69214;
+            color: white;
+            padding: 15px 25px; /* Increased padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            font-size: 1.2rem; /* Increased font size */
+        }
+
+        .bigButton:hover {
+            background-color: #ffcc00;
+        }
+
+        .buttonText {
+            color: white;
+            font-size: 1.2rem; /* Increased font size */
+        }
+
+        .ucsdText {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.2rem; /* Increased font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to my reaction</h1>
+        <h2>Slide to see my reactions!</h2>
+    </div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url('random\ 1.jpg')"></div>
+            <div class="swiper-slide" style="background-image:url('random\ 3.jpg')"></div>
+            <div class="swiper-slide" style="background-image:url('random\ 4.jpg')"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <p class="ucsdText">So why should I go to UCSD?</p>
+
+    <button id="ucsdButton" class="bigButton" onclick="window.location.href='page2.html'">
+        <span class="buttonText">Click here to find out!</span>
+    </button>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                direction: 'horizontal',
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                autoplay: {
+                    delay: 3000, // milliseconds
+                },
+                speed: 1000, // milliseconds
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I should go to UCSD Bingo</title>
+    <style>
+        body {
+            background-color: #182b49;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .bingo-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .bingo-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .bingo-card {
+            width: 120px; /* Adjust card width */
+            height: 120px; /* Adjust card height */
+            background-color: #c69214;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Text color */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .bingo-card:last-child {
+            margin-right: 0;
+        }
+
+        .bingo-card:hover {
+            background-color: #ffcc00; /* Change color on hover */
+        }
+
+        .bingo-text {
+            text-align: center;
+        }
+
+        .find-out {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .find-out p {
+            font-size: 20px; /* Increase the size of the text */
+            margin-bottom: 10px; /* Add spacing below the text */
+        }
+
+        .find-out button {
+            background-color: #FFD700; /* Yellow */
+            color: black; /* Black text on yellow button */
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .find-out button:hover {
+            background-color: #FFC100; /* Darker yellow on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="bingo-title">Why I should go to UCSD Bingo</h1>
+
+    <div class="bingo-row">
+        <div class="bingo-card" onclick="revealText(this, 'I made this website before my portfolio website because I love UCSD')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+        <div class="bingo-card" onclick="revealText(this, 'I want to be the first CS developer in my family')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+        <div class="bingo-card" onclick="revealText(this, 'I want to write Love and Breakup Letters to the library')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+        <div class="bingo-card" onclick="revealText(this, 'I want to continue researching wild animal detection in farmlands at Undergraduate Research Hub.')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+    </div>
+
+    <div class="bingo-row">
+        <div class="bingo-card" onclick="revealText(this, 'I want to encourage people to leverage technology for sustainability')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+        <div class="bingo-card" onclick="revealText(this, 'I want to be guided by Professors Vineet Bafna and Katie Cezo')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+        <div class="bingo-card" onclick="revealText(this, 'I want to display my Triton Pride')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+        <div class="bingo-card" onclick="revealText(this, 'I want to encourage more girls in STEM')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+    </div>
+
+    <div class="bingo-row">
+        <div class="bingo-card" onclick="revealText(this, 'I am excited to use TritonGPT at campus')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+        <div class="bingo-card" onclick="revealText(this, 'I want to bridge the gap between humans and technology')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+        <div class="bingo-card" onclick="revealText(this, 'To learn more about AI projects like AI Fire-Detection Tool made by UCSD ')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+        <div class="bingo-card" onclick="revealText(this, 'I love UCSD since it is my top choice')">
+            <div class="bingo-text">Click to reveal</div>
+        </div>
+    </div>
+
+    <div class="find-out">
+        <p style="font-size: 24px;">So how would I look at UCSD?</p> <!-- Bigger text size -->
+        <a href="page3.html"><button>Click here to find out</button></a>
+    </div>
+
+    <script>
+        function revealText(card, text) {
+            card.innerHTML = "<div class='bingo-text'>" + text + "</div>"; // Add your text here
+            card.style.backgroundColor = "#0056b3"; // Change background color
+            card.style.transition = "none"; // Disable transition after reveal
+            card.onclick = null; // Remove onclick event to prevent further clicks
+        }
+    </script>
+</body>
+</html>
